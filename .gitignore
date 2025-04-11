@@ -1,0 +1,43 @@
+# Игнорировать файлы Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Игнорировать скомпилированные бинарники и папки сборки
+bin/
+obj/
+*.exe
+*.pdb
+*.dll
+
+# Игнорировать папки с пакетами NuGet
+packages/
+
+# Игнорировать файлы конфигурации с секретами
+appsettings.*.json
+
+# Игнорировать папку для загружаемых файлов (если есть)
+Uploads/
+
+# Игнорировать файлы и папки Node.js (если используете фронтенд)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Игнорировать файлы сборки фронтенда (если есть)
+frontend/dist/
+frontend/node_modules/
+
+# Игнорировать системные файлы macOS
+.DS_Store
+
+# Игнорировать системные файлы Windows
+Thumbs.db
+
+# Игнорировать файлы IntelliJ IDEA (если используете)
+.idea/
+
+# Игнорировать файлы VS Code (если используете)
+.vscode/
