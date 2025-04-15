@@ -8,36 +8,36 @@ namespace HealthApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HealthRecordsController : ControllerBase
+    public class BiomarkersController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public HealthRecordsController(AppDbContext context)
+        public BiomarkersController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/healthrecords
+        // GET: api/biomarkers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var records = await _context.HealthRecords.ToListAsync();
-            return Ok(records);
+            var biomarkers = await _context.Biomarkers.ToListAsync();
+            return Ok(biomarkers);
         }
 
-        // POST: api/healthrecords
+        // POST: api/biomarkers
         [HttpPost]
-        public async Task<IActionResult> Create(HealthRecord record)
+        public async Task<IActionResult> Create(Biomarker biomarker)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.HealthRecords.Add(record);
+            _context.Biomarkers.Add(biomarker);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetAll), new { id = record.Id }, record);
+            return CreatedAtAction(nameof(GetAll), new { id = biomarker.Id }, biomarker);
         }
     }
 }
